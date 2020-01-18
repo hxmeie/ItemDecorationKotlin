@@ -1,6 +1,7 @@
 package com.hxm.decorationandroidx
 
 import android.graphics.Color
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 /**
@@ -27,6 +28,11 @@ class GridItemDecoration(
             marginTop = margin
             marginBottom = margin
         }
+    }
+
+    companion object {
+        const val VERTICAL = GridLayoutManager.VERTICAL
+        const val HORIZONTAL = GridLayoutManager.HORIZONTAL
     }
 
 }
