@@ -3,30 +3,31 @@ package com.hxm.itemdecorationkotlin
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.hxm.decorationandroidx.LinearItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
+import com.hxm.decorationandroidx.GridItemDecoration
 import kotlinx.android.synthetic.main.activity_decoration.*
 
 /**
- * Created by hxm on 2020/1/17
+ * Created by hxm on 2020/1/19
  * Des:
  */
-class LinearDecorationActivity : AppCompatActivity() {
+class GridDecorationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_decoration)
+
         recyclerView.apply {
             addItemDecoration(
-                LinearItemDecoration(
+                GridItemDecoration(
                     dividerColor = ContextCompat.getColor(
-                        this@LinearDecorationActivity,
+                        this@GridDecorationActivity,
                         R.color.orange
                     ),
                     dividerSize = 10
                 )
             )
-            layoutManager = LinearLayoutManager(this@LinearDecorationActivity)
+            layoutManager = GridLayoutManager(this@GridDecorationActivity, 4)
             adapter = TestAdapter()
         }
     }

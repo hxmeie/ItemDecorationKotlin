@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LinearDecorationActivity" />
+        <activity android:name=".GridDecorationActivity" />
     </application>
 
 </manifest>

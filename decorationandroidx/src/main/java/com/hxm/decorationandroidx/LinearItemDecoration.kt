@@ -16,11 +16,11 @@ class LinearItemDecoration(
     private var drawHeader: Boolean = true,//第一项底部是否画线，默认画
     private var drawFooter: Boolean = true,//最后一项顶部是否画线，默认画
     private var drawMargin: Boolean = false,//绘制margin区域的颜色
-    @Px private var marginStart: Int = 0,
-    @Px private var marginEnd: Int = 0,
+    @Px private var marginLeft: Int = 0,
+    @Px private var marginRight: Int = 0,
     @Px private var dividerSize: Int = 2,//横线分割线宽度，默认2px
-    private var marginStartColor: Int = Color.parseColor("#ffffff"),
-    private var marginEndColor: Int = Color.parseColor("#ffffff"),
+    private var marginLeftColor: Int = Color.parseColor("#ffffff"),
+    private var marginRightColor: Int = Color.parseColor("#ffffff"),
     private var dividerColor: Int = Color.parseColor("#000000")//分割线颜色
 ) : RecyclerView.ItemDecoration() {
 
@@ -33,14 +33,14 @@ class LinearItemDecoration(
     }
     private val marginStartPaint: Paint by lazy {
         Paint().apply {
-            color = marginStartColor
+            color = marginLeftColor
             style = Paint.Style.FILL
             isAntiAlias = true
         }
     }
     private val marginEndPaint: Paint by lazy {
         Paint().apply {
-            color = marginEndColor
+            color = marginRightColor
             style = Paint.Style.FILL
             isAntiAlias = true
         }
@@ -60,9 +60,9 @@ class LinearItemDecoration(
                     continue
                 if (itemPosition == itemCount - 2 && !drawFooter)
                     continue
-                val left = (childView.left + marginStart).toFloat()
+                val left = (childView.left + marginLeft).toFloat()
                 val top = childView.bottom.toFloat()
-                val right = (childView.right - marginEnd).toFloat()
+                val right = (childView.right - marginRight).toFloat()
                 val bottom = (top + dividerSize)
                 c.drawRect(left, top, right, bottom, paint)
                 if (drawMargin) {
