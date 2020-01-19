@@ -1,5 +1,6 @@
 package com.hxm.itemdecorationkotlin
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -24,7 +25,9 @@ class GridDecorationActivity : AppCompatActivity() {
                         this@GridDecorationActivity,
                         R.color.orange
                     ),
-                    dividerSize = 10
+                    dividerSize = 10,
+                    margin = 10,
+                    marginColor = Color.RED
                 )
             )
             layoutManager = GridLayoutManager(this@GridDecorationActivity, 4)
