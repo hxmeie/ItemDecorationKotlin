@@ -106,7 +106,7 @@ class GridItemDecoration(
             val spanCount = getSpanCount(parent)
             val itemPosition = parent.getChildLayoutPosition(view)
             val column = itemPosition % spanCount
-            var bottom = if (isLastRow(itemPosition, spanCount, itemCount)) 0 else dividerHorSize
+            val bottom = if (isLastRow(itemPosition, spanCount, itemCount)) 0 else dividerHorSize
             val left = column * dividerVerSize / spanCount
             val right = dividerVerSize - (column + 1) * dividerVerSize / spanCount
             outRect.set(left, 0, right, bottom)
@@ -208,7 +208,7 @@ class GridItemDecoration(
             if (isFirstColumn(position, spanCount)) {
                 val l = child.left - marginLeft
                 val t = child.top - marginTop
-                var r = child.left
+                val r = child.left
                 val b = if (isLastRow(position, spanCount, itemCount))
                     child.bottom + marginBottom else child.bottom + dividerHorSize
                 canvas.drawRect(l.toFloat(), t.toFloat(), r.toFloat(), b.toFloat(), mMarginPaint)
