@@ -16,7 +16,7 @@ class LinearDecorationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_decoration)
-        recyclerView.apply {
+        with(recyclerView) {
             addItemDecoration(
                 LinearItemDecoration(
                     dividerColor = ContextCompat.getColor(

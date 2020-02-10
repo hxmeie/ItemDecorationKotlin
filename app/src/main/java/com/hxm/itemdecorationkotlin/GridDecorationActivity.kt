@@ -18,7 +18,7 @@ class GridDecorationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_decoration)
 
-        recyclerView.apply {
+        with(recyclerView) {
             addItemDecoration(
                 GridItemDecoration(
                     dividerColor = ContextCompat.getColor(
