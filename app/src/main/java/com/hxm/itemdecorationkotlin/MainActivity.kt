@@ -18,5 +18,9 @@ class MainActivity : AppCompatActivity() {
         btnGrid.setOnClickListener {
             startActivity(Intent(this, GridDecorationActivity::class.java))
         }
+
+        btnHorizontal.setOnClickListener {
+            startActivity(Intent(this, HorizontalLinearDecorationActivity::class.java))
+        }
     }
 }
